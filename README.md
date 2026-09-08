@@ -24,6 +24,10 @@ The objective of this project is to automatically detect cellphone usage from a 
 <img src="images/img.jpg" width="600">
 </div>
 
+<div align="center">
+<img src="images/ntfy.jpeg" width="600">
+</div>
+
 
 ### System Flow
 
