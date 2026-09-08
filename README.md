@@ -132,6 +132,196 @@ pip install ultralytics opencv-python requests
 
 ---
 
+## ▶️ Steps to Follow
+
+Follow these steps to download, install, configure, and run the cellphone detection system.
+
+### 1. Download the Project
+
+Open the GitHub repository:
+
+**[YOLOv8-Cellphone-Detection-NTFY-Alert](https://github.com/PukyBots/YOLOv8-Cellphone-Detection-NTFY-Alert)**
+
+Click:
+
+```text
+Code → Download ZIP
+```
+
+Extract the downloaded ZIP file on your computer.
+
+---
+
+### 2. Open the Project in VS Code
+
+Open **Visual Studio Code** and select the extracted project folder.
+
+Then open the VS Code terminal:
+
+```text
+Terminal → New Terminal
+```
+
+---
+
+### 3. Create a Virtual Environment
+
+Run:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+```bash
+venv\Scripts\activate
+```
+
+After activation, you should see:
+
+```text
+(venv)
+```
+
+in the terminal.
+
+---
+
+### 4. Install Required Packages
+
+Install all required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 5. Run Basic Cellphone Detection
+
+Start the webcam detection without the alarm or notification:
+
+```bash
+python detect_webcam.py
+```
+
+The webcam will open and the YOLOv8 model will detect cellphones in real time.
+
+To stop the program, press:
+
+```text
+Ctrl + C
+```
+
+in the VS Code terminal.
+
+---
+
+### 6. Run Cellphone Detection + Alarm
+
+Next, run:
+
+```bash
+python webcam_alarm.py
+```
+
+When the model detects a cellphone:
+
+```text
+Cellphone detected
+       ↓
+System alarm 🔔
+```
+
+The alarm is generated locally on the computer.
+
+To stop the program:
+
+```text
+Ctrl + C
+```
+
+---
+
+### 7. Set Up NTFY on the Caretaker's Phone
+
+Install the **NTFY** application on the caretaker's mobile phone.
+
+Open the NTFY app and press:
+
+```text
++
+```
+
+Create/subscribe to the following topic:
+
+```text
+pulkit-cellphone-alert
+```
+
+The caretaker's phone must subscribe to the same topic used in the Python program.
+
+---
+
+### 8. Run Cellphone Detection + Alarm + NTFY
+
+Finally, run:
+
+```bash
+python webcam_alarm_ntfy.py
+```
+
+Now the complete system is active:
+
+```text
+             📷 Webcam
+                 │
+                 ▼
+             YOLOv8
+                 │
+                 ▼
+        Cellphone Detected?
+                 │
+          ┌──────┴──────┐
+          ▼             ▼
+      🔔 Alarm      📲 NTFY Alert
+       on PC        to Caretaker
+```
+
+Whenever cellphone usage is detected:
+
+**The computer alarm is triggered and the caretaker receives an NTFY notification.**
+
+---
+
+### 9. Stop the Program
+
+To stop any running detection program, press:
+
+```text
+Ctrl + C
+```
+
+in the VS Code terminal.
+
+---
+
+## 📌 Which Python File Should I Run?
+
+| File                   | Function                                        |
+| ---------------------- | ----------------------------------------------- |
+| `detect_webcam.py`     | YOLOv8 cellphone detection only                 |
+| `webcam_alarm.py`      | Cellphone detection + computer alarm            |
+| `webcam_alarm_ntfy.py` | Cellphone detection + alarm + NTFY notification |
+
+For the **complete monitoring system**, use:
+
+```bash
+python webcam_alarm_ntfy.py
+```
+
+
 ## 🔔 Alarm Setup
 
 The project uses a WAV file for the local alarm.
