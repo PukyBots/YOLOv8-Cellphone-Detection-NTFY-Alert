@@ -1,0 +1,9 @@
+path: C:/Users/pg/Downloads/cellphone_detection/dataset
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 3
+names: ['cellphone', 'not_using', 'using_cellphone']
+
